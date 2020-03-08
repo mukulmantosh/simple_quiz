@@ -1,5 +1,6 @@
 ### Generate Dummy Questions
 
+* Note : Just remove db.sqlite3 file before running migration command.
 ```
 python manage.py generate_question_bank
 ```
