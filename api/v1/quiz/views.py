@@ -81,3 +81,11 @@ class SaveUserTestInformationAPI(APIView):
         TestInformation.objects.filter(id=test_information_id).update(total_right_answers=total_right_answers)
 
         return Response({"status": True, "message": "Saved User Input !", "data": None}, status=status.HTTP_201_CREATED)
+
+
+
+
+class UserTestResultsAPI(ListAPIView):
+    serializer_class = serializer.UserTestResultsListingSerializer
+    def get_queryset(self):
+        return TestInformation.objects.filter(user=self.request.user)

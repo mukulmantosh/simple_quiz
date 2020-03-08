@@ -31,3 +31,10 @@ class SaveUserTestResponseSerializer(serializers.Serializer):
     test_information_id = serializers.IntegerField()
     question_id = serializers.IntegerField()
     option_id = serializers.IntegerField()
+
+
+class UserTestResultsListingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TestInformation
+        fields = ("id", "module", "total_questions", "total_right_answers")
+        depth = 1
