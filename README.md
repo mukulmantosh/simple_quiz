@@ -1,8 +1,10 @@
 python manage.py generate_question_bank
 
 
-Quiz Listing
-URL : /api/v1/quiz/listing
+Description : Quiz Listing <br>
+URL : /api/v1/quiz/listing <br>
+Method : GET <br>
+
 ```
 {
     "count": 2,
@@ -21,8 +23,7 @@ URL : /api/v1/quiz/listing
 }
 ```
 
-Question Listing based on Test/Module Id
-<br>
+Description : Question Listing based on Test/Module Id <br>
 URL : /api/v1/quiz/questions?module_id={id}
 
 ```
@@ -56,3 +57,19 @@ URL : /api/v1/quiz/questions?module_id={id}
     ]
 }
 ```
+
+Description : Initiating Test
+<br>
+Method : POST
+<br>
+URL : /api/v1/quiz/initiate
+<br>
+Authorization Header:
+```angular2
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTgzODMwMzkxLCJqdGkiOiJiOGFkZWUxNjY1YTk0MDk1ODNkYjcwNWU5ZDMwYTczZSIsInVzZXJfaWQiOjF9.VHOV_sicCdDbHBBFExi6JbbVJ-U2BI5x6AgN6zu8qgI"
+}
+
+```
+You can get the token from the Login API. You need to pass the access token.
+
