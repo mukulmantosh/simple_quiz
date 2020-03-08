@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from mcq.models import QuizModule, Questions, Options
+from scores.models import TestDetailedInformation, TestInformation
 
 
 class QuizListingSerializer(serializers.ModelSerializer):
@@ -24,3 +25,9 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 class InitiateTestSerializer(serializers.Serializer):
     module = serializers.IntegerField()
+
+
+class SaveUserTestResponseSerializer(serializers.Serializer):
+    test_information_id = serializers.IntegerField()
+    question_id = serializers.IntegerField()
+    option_id = serializers.IntegerField()
