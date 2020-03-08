@@ -20,3 +20,7 @@ class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Questions
         fields = ("id", "question", "options")
+
+
+class InitiateTestSerializer(serializers.Serializer):
+    module = serializers.IntegerField()
